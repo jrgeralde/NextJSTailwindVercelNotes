@@ -1,0 +1,167 @@
+Common Classes
+---------------------------------------------------------------------------------------------------------------------
+| Class                        | Category                | What it does                                                                      
+| ----------------------------| -------------------------- | ---------------------------------------------------------- 
+| `sticky`                     | Positioning             | Makes the element stick to a position when scrolling
+| `top-0`                      | Positioning             | Sticks the element to the top (0px from top)              
+| Name                     | Z-index                   | Places the element above most other elements   
+| `w-[98%]`                 | Width                      | Sets width to 98% of its parent                            
+| `mx-auto`                 | Spacing                  | Centers the element horizontally (auto left/right margin)  
+| `flex`                        | Layout                     | Enables flexbox layout                                     
+| `flex-col`                  | Layout                     | Stacks children vertically (column)                        
+| `sm:flex-row`           | Responsive Layout  | Changes layout to horizontal (row) on small screens and up 
+| `backdrop-blur-md` | Effects                     | Applies medium blur to background behind the element       
+| `bg-white/20`           | Background            | White background with 20% opacity                          
+| `border`                   | Border                     | Adds a default border                                      
+| `border-white/30`    | Border                      | Sets border color to white with 30% opacity                
+| `shadow-lg`            | Effects                      | Adds a large shadow                                        
+| `h-auto`                  | Height                       | Height adjusts based on content                            
+| `sm:h-24`               | Responsive Height   | Sets height to 6rem (96px) on small screens and up     
+| `mt-10`                   | Spacing                    | Adds top margin (2.5rem / 40px)                           
+| `rounded-2xl`         | Border Radius          | Applies large rounded corners                              
+---------------------------------------------------------------------------------------------------------------------
+
+Rounded Borders
+--------------------------------------------------------------
+| Class                        | Effect                                                                     
+| ----------------------------| ------------------------------- 
+| rounded-sm	| Very subtle
+| rounded                    | Default slight rounding
+| rounded-md	| Medium (what you used)
+| rounded-lg	| More rounded
+| rounded-xl / 2xl	| Very rounded
+| rounded-full	| Fully circular (if square)
+----------------------------------------------------------------
+
+Distributing Flex Rows to columns:
+
+div class="flex">
+  <div class="w-[10%] bg-gray-200">Left (10%)</div>
+  <div class="w-[90%] bg-gray-400">Right (90%)</div>
+</div>
+
+---------------------------------------------------------
+Widths and Border:
+
+    <div className="w-[98vw] h-[100px] border rounded-sm ml-1"> 
+          This is the Main Banner
+    </div>
+
+----------------------------------------------------------------
+Alignment of Flex
+
+flex-row  : main axis is horizontal, alignment is done by justify-, the vertical axis (cross) is aligned by items-
+flex-col  : main axis is vertical, alignment is done by justify-, the horizontal axis (cross) is aligned by items-
+
+---------------------------------------------------------------------
+Viewport Sizes in Tailwind:
+
+Category,                 Tailwind Prefix,    Pixel Range,         Device Examples
+Mobile (Portrait),          (None),          0px – 639px,          "iPhone, Android handsets"
+Mobile (Landscape),     sm,               640px – 767px,       "Large phones, small e-readers"
+Tablet,                          md,               768px – 1023px,    "iPad, Galaxy Tab"
+Laptop / Desktop,          lg,               1024px – 1279px,    "MacBook Air, standard monitors"
+Large Desktop,              xl,               1280px – 1535px,   1080p Displays
+Ultra-wide,                   2xl,                1536px+,               "4K Monitors, Large iMacs"
+
+-----------------------------------------------------------------------------------
+tailwind units:
+Tailwind Class     Rem Equivalent     Pixel Equivalent (16px base)
+------------------------------------------------------------------
+w-0 / h-0          0rem               0px
+w-px / h-px        1px                1px
+w-0.5 / h-0.5      0.125rem           2px
+w-1 / h-1          0.25rem            4px
+w-2 / h-2          0.5rem             8px
+w-3 / h-3          0.75rem            12px
+w-4 / h-4          1rem               16px
+w-5 / h-5          1.25rem            20px
+w-6 / h-6          1.5rem             24px
+w-8 / h-8          2rem               32px
+w-10 / h-10        2.5rem             40px
+w-12 / h-12        3rem               48px
+w-16 / h-16        4rem               64px
+w-20 / h-20        5rem               80px
+w-24 / h-24        6rem               96px
+w-32 / h-32        8rem               128px
+w-40 / h-40        10rem              160px
+w-48 / h-48        12rem              192px
+w-56 / h-56        14rem              224px
+w-64 / h-64        16rem              256px
+w-72 / h-72        18rem              288px
+w-80 / h-80        20rem              320px
+w-96 / h-96        24rem              384px
+
+
+Tailwind Class Percentage (%)   CSS Equivalent
+------------------------------------------------------
+w-1/2              50%                width: 50%;
+w-1/3              33.333333%         width: 33.333333%;
+w-2/3              66.666667%         width: 66.666667%;
+w-1/4              25%                width: 25%;
+w-2/4              50%                width: 50%;
+w-3/4              75%                width: 75%;
+w-1/5              20%                width: 20%;
+w-2/5              40%                width: 40%;
+w-3/5              60%                width: 60%;
+w-4/5              80%                width: 80%;
+w-1/6              16.666667%         width: 16.666667%;
+w-2/6              33.333333%         width: 33.333333%;
+w-3/6              50%                width: 50%;
+w-4/6              66.666667%         width: 66.666667%;
+w-5/6              83.333333%         width: 83.333333%;
+w-1/12             8.333333%          width: 8.333333%;
+w-2/12             16.666667%         width: 16.666667%;
+w-3/12             25%                width: 25%;
+w-4/12             33.333333%         width: 33.333333%;
+w-5/12             41.666667%         width: 41.666667%;
+w-6/12             50%                width: 50%;
+w-7/12             58.333333%         width: 58.333333%;
+w-8/12             66.666667%         width: 66.666667%;
+w-9/12             75%                width: 75%;
+w-10/12            83.333333%         width: 83.333333%;
+w-11/12            91.666667%         width: 91.666667%;
+w-full             100%               width: 100%;
+w-auto             Auto               width: auto;
+-----------------------------------------------------------------------------------
+images
+
+import Image from "next/image";
+
+
+        <Image
+          src="/images/IDPIC.jpg"
+          alt="Profile"
+          width={72}
+          height={72}
+          loading="eager"
+          className="rounded-full object-cover w-20 h-20"
+        />
+      </div>
+
+          loading="eager"    // load with higher priority even during scrolling
+          className="rounded-full object-cover w-20 h-20"
+
+   w-20 = 80 rem in tailwind must be a little bigger than 72 px
+
+
+
+
+
+
+
+
+
+    <div className="sticky top-0 flex flex-col md:flex-row z-50  h-80 border rounded-sm ml-1 w-[98%] backdrop-blur-md">
+       <div className="w-full md:w-[10%] bg-gray-200 flex flex-col justify-center items-center min-w-fit">
+          <p className="whitespace-nowrap">Left first line</p>
+       </div>
+       <div className="w-full md:w-[90%] bg-gray-400 flex flex-col justify-center items-center md:items-start">
+          <p>Right first line</p>
+          <p>Right second line</p>
+       </div>
+
+    </div>
+
+
+
