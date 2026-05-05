@@ -1,0 +1,268 @@
+#----------------------------TO INSTALL LUCIDE REACT ---------------------------
+
+npm install lucide-react
+
+
+#-----------------------------src/app/page.tsx ---------------------------------------------
+import ExpandingCard from "@/app/components/expandingcard";
+import { UserRound,Cog, CalendarDays,Presentation,Play,GraduationCap } from "lucide-react";
+import {MyServices} from "@/app/components/myservices";
+
+export default function Home() {
+  return (
+    <div className="flex flex-col sm:flex-row gap-2 border border-gray-300 rounded-sm items-start w-[97%] ml-2 mt-2" >
+        {/* Left Div */}
+        <div className="w-full sm:w-[60%] ">  
+          <span className="inline-flex items-center gap-2 ml-2 mt-2">     
+              <UserRound/>
+              <h3 className="text-sm font-semibold text-foreground">About me</h3>
+            </span>
+
+            <div className="mt-4 w-[96%] ml-2">  
+              <ExpandingCard
+                 MainIcon={Cog}
+                 MainTitle="Full Stack Developer / Software Systems Expert / Computer Science Instructor / Youtube Content Creator"            
+                 items={[
+                  // 1st Item
+                  {
+                    subicon: CalendarDays,
+                    subtitle: "1996 to Present",
+                    description: (
+                      <>
+                        <p className="mt-1.5 mb-2 text-sm font-semibold text-foreground">
+                          Senior Software Engineer with 30 years of experience developing business software, ERP systems, and web applications.
+                        </p>
+                        
+                        <p className="mt-1.5 mb-1.5 text-sm font-semibold text-foreground">
+                          Specializes in:
+                        </p>
+                        <ul className="mt-4 space-y-2 text-sm font-semibold text-foreground">
+                          <li>• Odoo ERP Development and Customization</li>
+                          <li>• Modernizing Legacy Systems</li>
+                          <li>• Fullstack Web Development using React, NextJS and PostgreSQL</li>
+                          <li>• Database Design and Administration and High-Availability Systems</li>
+                          <li>• Linux Server Deployment</li>
+                        </ul>
+                        <p className="mt-4 mb-1.5 text-sm font-semibold text-foreground">
+                          Helps businesses modernize their operations, automate workflows, and build scalable software solutions.
+                        </p>
+                      </>
+                    ),
+                  },
+                  // 2nd Item
+                  {
+                    subicon: Presentation,
+                    subtitle: "1987 to Present",
+                    description: (
+                      <>
+                        <p className="mt-1.5 mb-1.5 text-sm font-semibold text-foreground">
+                          Computer Science Instructor, Ateneo de Davao University, Davao City, Philippines
+                        </p>
+                        <p className="mt-4 mb-1.5 text-sm font-semibold text-foreground">
+                          Conducts actual classroom instruction designed to achieve course objectives that are aligned with the school&apos;s mission and vision.
+                        </p>
+                        <p className="mt-1.5 mb-1.5 text-sm font-semibold text-foreground">
+                          Collaborates with industry, makes project proposals for software development, develops and implements software solutions for various aspects of their operation.
+                        </p>
+                        <p className="mt-1.5 mb-1.5 text-sm font-semibold text-foreground">
+                          Mentors students, fostering a collaborative learning environment that promotes innovation and knowledge sharing on various projects with industry partners.
+                        </p>
+                      </>
+                    ),
+                  },
+                  // 3rd Item
+                                    {
+                    subicon: CalendarDays,
+                    subtitle: "2021 to Present",
+                    description: (
+                      <>
+                        <p className="mt-1.5 mb-1.5 text-sm font-semibold text-foreground">
+                          Youtube Content Creator
+                        </p>
+                        <p className="mt-4 mb-1.5 text-sm font-semibold text-foreground">
+                          Authored Instructional Videos on Odoo Development, History of Computing, Boolean Logic and Circuitverse, Assembly Language Programming, Database Desktop Development using C#, Introduction to Javascript, HTML and CSS.{" "}
+                        </p>
+
+                        <p>
+                          <span className="font-semibold">Youtube channel:</span>{" "}
+                          <a
+                            href="https://www.youtube.com/@roytek7667/playlists"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-brand underline underline-offset-4"
+                          >
+                            <Play className="size-4" aria-hidden />
+                            <span>www.youtube.com/@roytek7667/playlists</span>
+                          </a>
+                          
+                        </p>
+                      </>
+                    ),
+                  }
+
+                ]}
+              />   
+             
+            
+            </div>
+                    
+
+        </div>
+
+        {/* Right Div */}
+        <div className="w-[97%] mr-2 mt-2 sm:mt-13 sm:w-[38%]">
+           <div className="w-[99%] ml-2">
+              <ExpandingCard
+                MainIcon={GraduationCap}
+                MainTitle="Education"
+                items={[
+                  {
+                    subicon: CalendarDays,
+                    subtitle: "1996 - MS in Computer Science Major in Artificial Intelligence",
+                    description: (
+                      <>
+                        <p className="mt-1.5 mb-1.5 text-sm font-semibold text-foreground">
+                          Ateneo de Manila University
+                        </p>
+                        <p className="mt-1.5 mb-1.5 text-sm font-semibold text-foreground">
+                          Quezon City, Philippines
+                        </p>
+                      </>
+                    ),
+                  },
+                  {
+                    subicon: CalendarDays,
+                    subtitle: "1987 - Bachelor in Management Engineering",
+                    description: (
+                      <>
+                        <p className="mt-1.5 mb-1.5 text-sm font-semibold text-foreground">
+                          Ateneo de Davao University
+                        </p>
+                        <p className="mt-1.5 mb-1.5 text-sm font-semibold text-foreground">
+                          Davao City, Philippines
+                        </p>
+                      </>
+                    ),
+                  },
+                ]}
+              />
+
+            <MyServices/>
+           </div>
+        </div>
+
+    </div>
+  )
+}
+
+#----------------------------------src/app/components/mainbanner.jsx-------------------------------------------
+import Image from "next/image";
+
+export default function MainBanner({name, title}) {
+  return (
+    <div className="sticky top-0 flex flex-col sm:flex-row  z-50 sm:w-[97%] 
+         h-auto border border-gray-300 rounded-sm backdrop-blur-sm  
+         hover:scale-102 transition-transform duration-300 ease-in-out shadow-lg 
+         bg-white/30 ml-2 mr-3 sm:ml-3.5 sm:mr-2 md:mr-1">
+       <div className="m-2 flex justify-center w-full sm:w-24" > 
+        <Image
+          src="/images/IDPIC.jpg"
+          alt="Profile"
+          width={72}
+          height={72}
+          loading="eager"
+          className="rounded-full object-cover w-20 h-20"
+        />
+      
+      </div>
+      <div className="m-2 flex flex-col items-center w-auto sm:justify-end sm:items-start"  >
+        <h1 className="text-lg font-bold">{name}</h1>
+         <p className="text-sm text-blue-500">{title}</p>
+      </div>
+    </div>
+
+  )
+}
+
+
+#----------------------------------src/app/components/expandingcard.jsx-------------------------------------------
+export default function ExpandingCard({
+  MainTitle,
+  MainIcon: MainIcon,
+  items,
+}) {
+  return (
+    <div className="flex flex-col gap-3 p-4 border border-gray-300 rounded-lg w-full overflow-hidden ml-1 mr-4">
+      {/* Header */}
+      <div className="flex items-center gap-2 mb-2">
+        <MainIcon className="w-6 h-6 text-blue-500" />
+        <h2 className="text-l font-bold">{MainTitle}</h2>
+      </div>
+
+      {/* Items */}
+      <div className="flex flex-col gap-2">
+        {items.map((item, index) => {
+          const SubIcon = item.subicon;
+          const description = item.description ?? item.textDescription;
+          return (
+            <div
+              key={index}
+              className="group flex flex-col gap-1 border border-gray-200 rounded-md px-4 py-3 cursor-pointer
+                         transition duration-300 ease-in-out hover:bg-gray-50 hover:scale-102 transform-gpu origin-center"
+            >
+              {/* Always visible row */}
+              <div className="flex items-center gap-2">
+                <SubIcon className="w-5 h-5 text-blue-400 shrink-0" />
+                <span className="font-semibold text-sm">{item.subtitle}</span>
+              </div>
+
+              {/* Description stays fully visible */}
+              <div className="leading-snug pt-1.5">
+                {description}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+#--------------------------------------------src/app/components/myservices.jsx------------------------------------------------------
+import { BriefcaseBusiness, Sparkles } from "lucide-react"
+
+export function MyServices() {
+  return (
+      <div className="w-auto ml-1 mt-2 border border-gray-300 rounded-lg bg-card p-5 hover:scale-105 transition-transform duration-200">
+        <div className="flex items-center gap-2">
+          <span
+            aria-hidden
+            className="grid size-8 place-items-center rounded-xl bg-brand text-primary-foreground"
+          >
+            <BriefcaseBusiness className="size-5 text-blue-400" />
+          </span>
+          <h3 className="text-sm font-semibold text-foreground">My Services</h3>
+        </div>
+
+        <ul className="mt-4 space-y-2 text-sm font-semibold text-foreground">
+          <li>✔ Odoo Development and Customization</li>
+          <li>✔ Odoo Installation (On-Premise and Cloud)</li>
+          <li>✔ Legacy System Modernization (C#, Delphi to Web)</li>
+          <li>✔ Fullstack Web Development (React, NextJS)</li>
+          <li>✔ Database Design and Optimization</li>
+          <li>✔ API Development and Integration</li>
+          <li>✔ ERP Implementation for Medium and Small Businesses</li>
+          <li>✔ Technical Support & Training for Software Systems, CRM,Automation & AI assisted Work Tools</li>
+          <li>✔ Linux Server Deployment</li>          
+
+        </ul>
+      </div>
+  )
+}
+
+
+
+
+
+
+
